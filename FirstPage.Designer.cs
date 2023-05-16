@@ -32,6 +32,7 @@
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
             button1 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -49,6 +50,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(192, 192, 255);
+            panel1.Controls.Add(button2);
             panel1.Controls.Add(button1);
             panel1.Location = new Point(12, 12);
             panel1.Name = "panel1";
@@ -69,6 +71,20 @@
             button1.Text = "Cicluri de învățământ";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.BackColor = Color.FromArgb(255, 128, 128);
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            button2.Location = new Point(230, 15);
+            button2.Name = "button2";
+            button2.Size = new Size(182, 68);
+            button2.TabIndex = 1;
+            button2.Text = "Programe de studii";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // FirstPage
             // 
@@ -92,5 +108,6 @@
         private PictureBox pictureBox2;
         private Panel panel1;
         private Button button1;
+        private Button button2;
     }
 }

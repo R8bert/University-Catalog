@@ -32,5 +32,11 @@ namespace Aplicatie
             CicluriInvatamant cicluriPanel = new CicluriInvatamant();
             cicluriPanel.Show();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ProgrameStudii programeStudii = new ProgrameStudii();
+            programeStudii.Show();
+        }
     }
 }
