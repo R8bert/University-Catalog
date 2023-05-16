@@ -1,0 +1,89 @@
+-- Creare baza de date
+CREATE DATABASE UniCatalog;
+GO
+
+-- Folosirea bazei de date
+USE UniCatalog;
+GO
+
+-- Cicluri de învățământ
+CREATE TABLE CicluriInvatamant (
+    ID_Ciclu INT PRIMARY KEY,
+    NumeCiclu NVARCHAR(50)
+);
+
+-- Programe de studii
+CREATE TABLE ProgrameStudii (
+    ID_Program INT PRIMARY KEY,
+    NumeProgram NVARCHAR(50),
+    ID_Ciclu INT,
+    FOREIGN KEY (ID_Ciclu) REFERENCES CicluriInvatamant(ID_Ciclu)
+);
+
+--  Ani de studii
+CREATE TABLE AniStudii (
+    ID_An INT PRIMARY KEY,
+    NumeAn NVARCHAR(50),
+    ID_Program INT,
+    FOREIGN KEY (ID_Program) REFERENCES ProgrameStudii(ID_Program)
+);
+
+--  Planuri de învățământ / Discipline
+CREATE TABLE PlanuriInvatamant (
+    ID_Disciplina INT PRIMARY KEY,
+    NumeDisciplina NVARCHAR(50),
+    AcronimDisciplina NVARCHAR(10),
+    NumarCredite INT,
+    ID_An INT,
+    FOREIGN KEY (ID_An) REFERENCES AniStudii(ID_An)
+);
+
+-- Studenți
+CREATE TABLE Studenti (
+    ID_Student INT PRIMARY KEY,
+    NumarMatricol NVARCHAR(20),
+    NumeStudent NVARCHAR(50),
+    PrenumeStudent NVARCHAR(50),
+    InitialaTata NVARCHAR(1),
+    CNP NVARCHAR(13),
+    DataInscriere DATE,
+    ID_Ciclu INT,
+    MediaInscriere FLOAT,
+    FOREIGN KEY (ID_Ciclu) REFERENCES CicluriInvatamant(ID_Ciclu)
+);
+
+-- Grupe
+CREATE TABLE Grupe (
+    ID_Grupa INT PRIMARY KEY,
+    NumeGrupa NVARCHAR(50),
+    ID_An INT,
+    FOREIGN KEY (ID_An) REFERENCES AniStudii(ID_An)
+);
+
+--  Cadre didactice
+CREATE TABLE CadreDidactice (
+    ID_CadruDidactic INT PRIMARY KEY,
+    NumeCadruDidactic NVARCHAR(50),
+    PrenumeCadruDidactic NVARCHAR(50),
+    MarcaAngajat NVARCHAR(20),
+    Titlu NVARCHAR(10),
+    Post NVARCHAR(50)
+);
+
+--  Utilizatori
+CREATE TABLE Utilizatori (
+    ID_Utilizator INT PRIMARY KEY,
+    NumeUtilizator NVARCHAR(50),
+    ParolaUtilizator NVARCHAR(50),
+    ProfilUtilizator NVARCHAR(50)
+);
+
+-- Cataloage / note
+CREATE TABLE Cataloage (
+    ID_Catalog INT PRIMARY KEY,
+    ID_Student INT,
+    ID_Disciplina INT,
+    Nota INT,
+    FOREIGN KEY (ID_Student) REFERENCES Studenti(ID_Student),
+    FOREIGN KEY (ID_Disciplina) REFERENCES PlanuriInvatamant(ID_Disciplina)
+);
