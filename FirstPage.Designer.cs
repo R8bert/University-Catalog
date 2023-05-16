@@ -129,5 +129,7 @@
         private PictureBox pictureBox2;
         private Panel panel1;
         private Button button1;
+        private Button button2;
+        private Button button3;
     }
 }

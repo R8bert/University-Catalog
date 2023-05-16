@@ -38,5 +38,11 @@ namespace Aplicatie
             ProgrameStudii programeStudii = new ProgrameStudii();
             programeStudii.Show();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Note note = new Note();
+            note.Show();
+        }
     }
 }
