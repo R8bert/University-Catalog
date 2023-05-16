@@ -56,6 +56,7 @@ namespace Aplicatie
                         FirstPage afterLogin = new FirstPage();
                         afterLogin.Show();
                         this.Hide();
+                       //this.Close();
                     }
                     else
                     {
