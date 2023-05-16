@@ -33,11 +33,10 @@ namespace Aplicatie
             cicluriPanel.Show();
         }
 
-
-        private void button3_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            Note pagina_note = new Note();
-            pagina_note.Show();
+            ProgrameStudii programeStudii = new ProgrameStudii();
+            programeStudii.Show();
         }
     }
 }
