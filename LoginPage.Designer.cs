@@ -1,6 +1,6 @@
 ﻿namespace Aplicatie
 {
-    partial class Form1
+    partial class LoginPage
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPage));
             label1 = new Label();
             enteredUsername = new TextBox();
             label2 = new Label();

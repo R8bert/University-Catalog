@@ -29,7 +29,7 @@ namespace Aplicatie
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CicluriInvatamant cicluriPanel = new CicluriInvatamant();
+            CI_Main cicluriPanel = new CI_Main();
             cicluriPanel.Show();
         }
 
@@ -43,6 +43,14 @@ namespace Aplicatie
         {
             Note note = new Note();
             note.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LoginPage logout = new LoginPage();
+            logout.Show();
+            this.Close();
+
         }
     }
 }

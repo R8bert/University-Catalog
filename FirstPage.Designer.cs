@@ -34,6 +34,7 @@
             button2 = new Button();
             button3 = new Button();
             button1 = new Button();
+            button5 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -103,12 +104,26 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
+            // button5
+            // 
+            button5.BackColor = Color.IndianRed;
+            button5.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.ForeColor = Color.AliceBlue;
+            button5.Location = new Point(1327, 699);
+            button5.Name = "button5";
+            button5.Size = new Size(145, 80);
+            button5.TabIndex = 4;
+            button5.Text = "LOG OUT";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
             // FirstPage
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1484, 791);
+            Controls.Add(button5);
             Controls.Add(panel1);
             Controls.Add(pictureBox2);
             Name = "FirstPage";
@@ -127,5 +142,7 @@
         private Button button1;
         private Button button2;
         private Button button3;
+        private Button button4;
+        private Button button5;
     }
 }

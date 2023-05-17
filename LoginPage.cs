@@ -7,11 +7,11 @@ using MySql.Data.MySqlClient;
 
 namespace Aplicatie
 {
-    public partial class Form1 : Form
+    public partial class LoginPage : Form
     {
         //string connectionString = "datasource=127.0.0.1;port=3306;database=catalog;user=root;password=";
 
-        public Form1()
+        public LoginPage()
         {
             InitializeComponent();
         }
