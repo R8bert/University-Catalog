@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Text.RegularExpressions;
 
 namespace Aplicatie
 {
@@ -14,14 +17,24 @@ namespace Aplicatie
         }
         private void InputDialogBox_Load(object sender, EventArgs e)
         {
-            // Orice cod necesar pentru încărcarea dialogului
+
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            NumeCicluValue = txtNumeCiclu.Text;
-            IDValue = Convert.ToInt32(txtID.Text);
-            DialogResult = DialogResult.OK;
+            string pattern = "^[0-9]+$";
+            bool esteNumar = Regex.IsMatch(txtID.Text, pattern);
+            if (esteNumar)
+            {
+                NumeCicluValue = txtNumeCiclu.Text;
+                IDValue = Convert.ToInt32(txtID.Text);
+                DialogResult = DialogResult.OK;
+            }
+            else
+            {
+                MessageBox.Show("Puteti introduce doar numere in campul ID");
+
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -35,6 +48,11 @@ namespace Aplicatie
         }
 
         private void txtID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

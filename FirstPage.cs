@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace Aplicatie
 {
@@ -50,6 +51,27 @@ namespace Aplicatie
             LoginPage logout = new LoginPage();
             logout.Show();
             this.Close();
+
+        }
+
+        private void btn_CadreDidactice_Click(object sender, EventArgs e)
+        {
+            CD_Main CD = new CD_Main();
+            CD.Show();
+        }
+
+        private void chart1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void chart1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
     }

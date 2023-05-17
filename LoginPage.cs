@@ -56,7 +56,7 @@ namespace Aplicatie
                         FirstPage afterLogin = new FirstPage();
                         afterLogin.Show();
                         this.Hide();
-                       //this.Close();
+                        //this.Close();
                     }
                     else
                     {
@@ -79,6 +79,16 @@ namespace Aplicatie
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void enteredPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

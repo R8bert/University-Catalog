@@ -64,7 +64,7 @@
             btnAdauga.UseVisualStyleBackColor = true;
             btnAdauga.Click += btnAdauga_Click;
             // 
-            // CicluriInvatamant
+            // CI_Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -72,7 +72,8 @@
             Controls.Add(btnAdauga);
             Controls.Add(btnSterge);
             Controls.Add(listBox1);
-            Name = "CicluriInvatamant";
+            FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Name = "CI_Main";
             Text = "Form2";
             Load += CicluriInvatamant_Load;
             ResumeLayout(false);

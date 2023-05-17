@@ -55,24 +55,26 @@
             // 
             // CI_Delete_Cancel
             // 
+            CI_Delete_Cancel.BackColor = Color.Crimson;
             CI_Delete_Cancel.Font = new Font("Segoe UI", 12.25F, FontStyle.Bold, GraphicsUnit.Point);
             CI_Delete_Cancel.Location = new Point(182, 149);
             CI_Delete_Cancel.Name = "CI_Delete_Cancel";
             CI_Delete_Cancel.Size = new Size(117, 59);
             CI_Delete_Cancel.TabIndex = 2;
             CI_Delete_Cancel.Text = "ANULEAZA";
-            CI_Delete_Cancel.UseVisualStyleBackColor = true;
+            CI_Delete_Cancel.UseVisualStyleBackColor = false;
             CI_Delete_Cancel.Click += button1_Click;
             // 
             // CI_Delete_Confirm
             // 
+            CI_Delete_Confirm.BackColor = Color.SpringGreen;
             CI_Delete_Confirm.Font = new Font("Segoe UI", 12.25F, FontStyle.Bold, GraphicsUnit.Point);
             CI_Delete_Confirm.Location = new Point(29, 149);
             CI_Delete_Confirm.Name = "CI_Delete_Confirm";
             CI_Delete_Confirm.Size = new Size(117, 59);
             CI_Delete_Confirm.TabIndex = 3;
             CI_Delete_Confirm.Text = "CONFIRM";
-            CI_Delete_Confirm.UseVisualStyleBackColor = true;
+            CI_Delete_Confirm.UseVisualStyleBackColor = false;
             CI_Delete_Confirm.Click += CI_Delete_Confirm_Click;
             // 
             // CI_DeleteDialog
@@ -84,7 +86,9 @@
             Controls.Add(CI_Delete_Cancel);
             Controls.Add(CI_DeleteIDTextBox);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "CI_DeleteDialog";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CI_DeleteDialog";
             Load += CI_DeleteDialog_Load;
             ResumeLayout(false);
