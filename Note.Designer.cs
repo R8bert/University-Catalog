@@ -35,6 +35,7 @@
             IDStudent = new DataGridViewTextBoxColumn();
             IDDisciplina = new DataGridViewTextBoxColumn();
             Nota = new DataGridViewTextBoxColumn();
+            saveFileDialog1 = new SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -120,5 +121,6 @@
         private DataGridViewTextBoxColumn IDStudent;
         private DataGridViewTextBoxColumn IDDisciplina;
         private DataGridViewTextBoxColumn Nota;
+        private SaveFileDialog saveFileDialog1;
     }
 }
