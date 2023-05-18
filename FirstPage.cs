@@ -54,6 +54,7 @@ namespace Aplicatie
 
         }
 
+
         private void btn_CadreDidactice_Click(object sender, EventArgs e)
         {
             CD_Main CD = new CD_Main();
