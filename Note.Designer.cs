@@ -28,27 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listBox1 = new ListBox();
             button_adn = new Button();
             button_gc = new Button();
-            label1 = new Label();
-            label2 = new Label();
+            dataGridView1 = new DataGridView();
+            IDCatalog = new DataGridViewTextBoxColumn();
+            IDStudent = new DataGridViewTextBoxColumn();
+            IDDisciplina = new DataGridViewTextBoxColumn();
+            Nota = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
-            // 
-            // listBox1
-            // 
-            listBox1.FormattingEnabled = true;
-            listBox1.ItemHeight = 20;
-            listBox1.Location = new Point(57, 53);
-            listBox1.Margin = new Padding(3, 4, 3, 4);
-            listBox1.Name = "listBox1";
-            listBox1.Size = new Size(700, 344);
-            listBox1.TabIndex = 1;
-            listBox1.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
             // button_adn
             // 
-            button_adn.Location = new Point(518, 442);
+            button_adn.Location = new Point(27, 445);
             button_adn.Name = "button_adn";
             button_adn.Size = new Size(153, 29);
             button_adn.TabIndex = 2;
@@ -58,7 +50,7 @@
             // 
             // button_gc
             // 
-            button_gc.Location = new Point(518, 517);
+            button_gc.Location = new Point(428, 445);
             button_gc.Name = "button_gc";
             button_gc.Size = new Size(153, 29);
             button_gc.TabIndex = 3;
@@ -66,47 +58,67 @@
             button_gc.UseVisualStyleBackColor = true;
             button_gc.Click += button_gc_Click;
             // 
-            // label1
+            // dataGridView1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(41, 419);
-            label1.Name = "label1";
-            label1.Size = new Size(77, 20);
-            label1.TabIndex = 4;
-            label1.Text = "Id Student";
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IDCatalog, IDStudent, IDDisciplina, Nota });
+            dataGridView1.Location = new Point(27, 28);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(554, 379);
+            dataGridView1.TabIndex = 4;
             // 
-            // label2
+            // IDCatalog
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(47, 467);
-            label2.Name = "label2";
-            label2.Size = new Size(93, 20);
-            label2.TabIndex = 5;
-            label2.Text = "ID Disciplina";
+            IDCatalog.HeaderText = "ID Catalog";
+            IDCatalog.MinimumWidth = 6;
+            IDCatalog.Name = "IDCatalog";
+            IDCatalog.Width = 125;
+            // 
+            // IDStudent
+            // 
+            IDStudent.HeaderText = "ID Student";
+            IDStudent.MinimumWidth = 6;
+            IDStudent.Name = "IDStudent";
+            IDStudent.Width = 125;
+            // 
+            // IDDisciplina
+            // 
+            IDDisciplina.HeaderText = "ID Disciplina";
+            IDDisciplina.MinimumWidth = 6;
+            IDDisciplina.Name = "IDDisciplina";
+            IDDisciplina.Width = 125;
+            // 
+            // Nota
+            // 
+            Nota.HeaderText = "Nota";
+            Nota.MinimumWidth = 6;
+            Nota.Name = "Nota";
+            Nota.Width = 125;
             // 
             // Note
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 596);
-            Controls.Add(label2);
-            Controls.Add(label1);
+            ClientSize = new Size(608, 499);
+            Controls.Add(dataGridView1);
             Controls.Add(button_gc);
             Controls.Add(button_adn);
-            Controls.Add(listBox1);
             Name = "Note";
             Text = "Note";
             Load += Note_Load;
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private ListBox listBox1;
         private Button button_adn;
         private Button button_gc;
-        private Label label1;
-        private Label label2;
+        private DataGridView dataGridView1;
+        private DataGridViewTextBoxColumn IDCatalog;
+        private DataGridViewTextBoxColumn IDStudent;
+        private DataGridViewTextBoxColumn IDDisciplina;
+        private DataGridViewTextBoxColumn Nota;
     }
 }
