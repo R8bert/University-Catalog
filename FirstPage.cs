@@ -75,5 +75,11 @@ namespace Aplicatie
         {
 
         }
+
+        private void buttonS_Click(object sender, EventArgs e)
+        {
+            ST_StudentiMain studenti = new ST_StudentiMain();
+            studenti.ShowDialog();
+        }
     }
 }

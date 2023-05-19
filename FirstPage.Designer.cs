@@ -38,6 +38,7 @@
             button5 = new Button();
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             mySqlCommand2 = new MySql.Data.MySqlClient.MySqlCommand();
+            buttonS = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -45,9 +46,10 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(1422, 118);
+            pictureBox2.Location = new Point(1625, 157);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(50, 50);
+            pictureBox2.Size = new Size(57, 67);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -59,9 +61,10 @@
             panel1.Controls.Add(button2);
             panel1.Controls.Add(button3);
             panel1.Controls.Add(button1);
-            panel1.Location = new Point(12, 12);
+            panel1.Location = new Point(14, 16);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1460, 100);
+            panel1.Size = new Size(1669, 133);
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
             // 
@@ -71,9 +74,10 @@
             btn_CadreDidactice.FlatAppearance.BorderSize = 0;
             btn_CadreDidactice.FlatStyle = FlatStyle.Flat;
             btn_CadreDidactice.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_CadreDidactice.Location = new Point(203, 13);
+            btn_CadreDidactice.Location = new Point(232, 17);
+            btn_CadreDidactice.Margin = new Padding(3, 4, 3, 4);
             btn_CadreDidactice.Name = "btn_CadreDidactice";
-            btn_CadreDidactice.Size = new Size(182, 72);
+            btn_CadreDidactice.Size = new Size(208, 96);
             btn_CadreDidactice.TabIndex = 4;
             btn_CadreDidactice.Text = "Cadre Didactice";
             btn_CadreDidactice.UseVisualStyleBackColor = false;
@@ -85,10 +89,9 @@
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = FlatStyle.Flat;
             button2.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            button2.Location = new Point(391, 13);
-            button2.Margin = new Padding(3, 2, 3, 2);
+            button2.Location = new Point(447, 17);
             button2.Name = "button2";
-            button2.Size = new Size(182, 72);
+            button2.Size = new Size(208, 96);
             button2.TabIndex = 1;
             button2.Text = "Programe de studii";
             button2.UseVisualStyleBackColor = false;
@@ -100,9 +103,10 @@
             button3.FlatAppearance.BorderSize = 0;
             button3.FlatStyle = FlatStyle.Flat;
             button3.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            button3.Location = new Point(579, 15);
+            button3.Location = new Point(662, 20);
+            button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
-            button3.Size = new Size(182, 68);
+            button3.Size = new Size(208, 91);
             button3.TabIndex = 3;
             button3.Text = "Note";
             button3.UseVisualStyleBackColor = false;
@@ -114,9 +118,10 @@
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            button1.Location = new Point(15, 15);
+            button1.Location = new Point(17, 20);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(182, 68);
+            button1.Size = new Size(208, 91);
             button1.TabIndex = 0;
             button1.Text = "Cicluri de învățământ";
             button1.UseVisualStyleBackColor = false;
@@ -127,9 +132,10 @@
             button5.BackColor = Color.IndianRed;
             button5.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
             button5.ForeColor = Color.AliceBlue;
-            button5.Location = new Point(1327, 699);
+            button5.Location = new Point(1517, 932);
+            button5.Margin = new Padding(3, 4, 3, 4);
             button5.Name = "button5";
-            button5.Size = new Size(145, 80);
+            button5.Size = new Size(166, 107);
             button5.TabIndex = 4;
             button5.Text = "LOG OUT";
             button5.UseVisualStyleBackColor = false;
@@ -149,16 +155,33 @@
             mySqlCommand2.EnableCaching = false;
             mySqlCommand2.Transaction = null;
             // 
+            // buttonS
+            // 
+            buttonS.BackColor = Color.FromArgb(255, 128, 128);
+            buttonS.FlatAppearance.BorderSize = 0;
+            buttonS.FlatStyle = FlatStyle.Flat;
+            buttonS.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonS.Location = new Point(258, 284);
+            buttonS.Margin = new Padding(3, 4, 3, 4);
+            buttonS.Name = "buttonS";
+            buttonS.Size = new Size(208, 91);
+            buttonS.TabIndex = 5;
+            buttonS.Text = "Studenti";
+            buttonS.UseVisualStyleBackColor = false;
+            buttonS.Click += buttonS_Click;
+            // 
             // FirstPage
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1484, 791);
+            ClientSize = new Size(1696, 1055);
+            Controls.Add(buttonS);
             Controls.Add(pictureBox2);
             Controls.Add(button5);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "FirstPage";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "--";
@@ -181,5 +204,6 @@
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand2;
         private System.CodeDom.CodeTypeReference chart1;
+        private Button buttonS;
     }
 }
