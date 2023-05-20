@@ -16,9 +16,7 @@ namespace Aplicatie
 
     public partial class AdaugareProgrameStudii : Form
     {
-        public static string ValoareNumarProgram = "";
-        public static string ValoareNumeProgram = "";
-        public static string ValoareIdCiclu = "";
+        public static int Id_Ciclu ;
         public AdaugareProgrameStudii()
         {
             InitializeComponent();
@@ -47,6 +45,7 @@ namespace Aplicatie
                     while (reader.Read())
                     {
                         Cicluri.Items.Add(reader.GetString("NumeCiclu"));
+                        Id_Ciclu= reader.GetInt32(0);
                     }
 
                 }
@@ -68,7 +67,7 @@ namespace Aplicatie
 
                 try
                 {
-                    string insertQuery = "INSERT INTO programestudii(ID_Program,NumeProgram, ID_Ciclu) VALUE ('" + NumarProgram.Text + "','" + NumeProgram.Text + "','" + Cicluri.SelectedIndex + "')";
+                    string insertQuery = "INSERT INTO programestudii(ID_Program,NumeProgram, ID_Ciclu) VALUE ('" + NumarProgram.Text + "','" + NumeProgram.Text + "','" + Id_Ciclu + "')";
                     connection.Open();
                     MySqlCommand cmd = new MySqlCommand(insertQuery, connection);
                     if (cmd.ExecuteNonQuery() == 1)

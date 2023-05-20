@@ -41,9 +41,10 @@
             // 
             // button_adn
             // 
-            button_adn.Location = new Point(27, 445);
+            button_adn.Location = new Point(24, 334);
+            button_adn.Margin = new Padding(3, 2, 3, 2);
             button_adn.Name = "button_adn";
-            button_adn.Size = new Size(153, 29);
+            button_adn.Size = new Size(134, 22);
             button_adn.TabIndex = 2;
             button_adn.Text = "Adauga Nota";
             button_adn.UseVisualStyleBackColor = true;
@@ -51,9 +52,10 @@
             // 
             // button_gc
             // 
-            button_gc.Location = new Point(428, 445);
+            button_gc.Location = new Point(374, 334);
+            button_gc.Margin = new Padding(3, 2, 3, 2);
             button_gc.Name = "button_gc";
-            button_gc.Size = new Size(153, 29);
+            button_gc.Size = new Size(134, 22);
             button_gc.TabIndex = 3;
             button_gc.Text = "Genereaza Catalog";
             button_gc.UseVisualStyleBackColor = true;
@@ -63,12 +65,14 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { IDCatalog, IDStudent, IDDisciplina, Nota });
-            dataGridView1.Location = new Point(27, 28);
+            dataGridView1.Location = new Point(24, 21);
+            dataGridView1.Margin = new Padding(3, 2, 3, 2);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 29;
-            dataGridView1.Size = new Size(554, 379);
+            dataGridView1.Size = new Size(485, 284);
             dataGridView1.TabIndex = 4;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // IDCatalog
             // 
@@ -100,12 +104,13 @@
             // 
             // Note
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(608, 499);
+            ClientSize = new Size(532, 374);
             Controls.Add(dataGridView1);
             Controls.Add(button_gc);
             Controls.Add(button_adn);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Note";
             Text = "Note";
             Load += Note_Load;

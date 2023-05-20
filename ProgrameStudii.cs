@@ -35,15 +35,13 @@ namespace Aplicatie
 
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            listBox1.Items.Clear();
 
                             while (reader.Read())
                             {
                                 int idProgram = reader.GetInt32(0);
                                 string numeProgram = reader.GetString(1);
                                 int idCiclu = reader.GetInt32(2);
-                                string listItem = string.Format("ID: {0} - Nume Program: {1} - ID Ciclu: {2}", idProgram, numeProgram, idCiclu);
-                                listBox1.Items.Add(listItem);
+                                dataGridView1.Rows.Add(idProgram, numeProgram, idCiclu);
                             }
                         }
                     }

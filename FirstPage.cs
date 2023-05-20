@@ -81,5 +81,11 @@ namespace Aplicatie
             ST_StudentiMain studenti = new ST_StudentiMain();
             studenti.ShowDialog();
         }
+
+        private void btn_grupe_Click(object sender, EventArgs e)
+        {
+            Grupe grupe = new Grupe();
+            grupe.ShowDialog();
+        }
     }
 }

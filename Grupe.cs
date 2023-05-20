@@ -8,24 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Forms.DataVisualization.Charting;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Aplicatie
 {
-    public partial class Note : Form
+    public partial class Grupe : Form
     {
-        public Note()
+        public Grupe()
         {
             InitializeComponent();
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Note_Load(object sender, EventArgs e)
+        private void Grupe_Load(object sender, EventArgs e)
         {
             using (MySqlConnection connection = new MySqlConnection(Global.connectionString))
             {
@@ -33,7 +25,7 @@ namespace Aplicatie
                 {
                     try
                     {
-                        string query = "SELECT ID_Catalog,ID_Student,ID_Disciplina,Nota FROM cataloage";
+                        string query = "SELECT NumeStudent,PrenumeStudent,DataInscriere,ID_Ciclu,MediaInscriere, id_grupa ,ID_ProgramStudii FROM studenti";
 
                         MySqlCommand command = new MySqlCommand(query, connection);
 
@@ -41,14 +33,17 @@ namespace Aplicatie
 
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-                            dataGridView1.Rows.Clear();
+
                             while (reader.Read())
                             {
-                                int idCatalog = reader.GetInt32(0);
-                                int idStudent = reader.GetInt32(1);
-                                int idDisciplina = reader.GetInt32(2);
-                                float Nota = reader.GetInt32(3);
-                                dataGridView1.Rows.Add(idCatalog, idStudent, idDisciplina, Nota);
+                                string numeStudent = reader.GetString(0);
+                                string prenumeStudent = reader.GetString(1);
+                                string dataInscriere = reader.GetString(2);
+                                int idCiclu = reader.GetInt32(3);
+                                int mediaInscriere = (int)reader.GetDouble(4);
+                                int program = reader.GetInt32(5);
+                                int grupa = reader.GetInt32(6);
+                                dataGridView1.Rows.Add(numeStudent, prenumeStudent, program, idCiclu, dataInscriere, mediaInscriere);
                             }
                         }
                     }
@@ -66,26 +61,24 @@ namespace Aplicatie
                     MessageBox.Show("Conexiunea la baza de date nu a putut fi stabilită!");
                 }
             }
-
         }
 
-        private void button_adn_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            CN_AdaugareNota adn = new CN_AdaugareNota();
-            adn.FormClosing += new FormClosingEventHandler(this.Note_Load);
-            adn.ShowDialog();
-            //adn.Show();
+            GenerareGrupe generare = new GenerareGrupe();
+            generare.Show();
         }
 
-        private void button_gc_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            CN_Salvare sv = new CN_Salvare();
-            sv.ShowDialog();
+            ImportareGrupe import = new ImportareGrupe();
+            import.Show();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
-
+            EditareGrupe edit = new EditareGrupe();
+            edit.Show();
         }
     }
 }
