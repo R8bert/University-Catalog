@@ -87,5 +87,11 @@ namespace Aplicatie
             Grupe grupe = new Grupe();
             grupe.ShowDialog();
         }
+
+        private void btn_anistudiu_Click(object sender, EventArgs e)
+        {
+            AniStudiu ani = new AniStudiu();
+            ani.ShowDialog();
+        }
     }
 }
