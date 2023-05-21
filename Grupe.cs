@@ -25,7 +25,7 @@ namespace Aplicatie
                 {
                     try
                     {
-                        string query = "SELECT NumeStudent,PrenumeStudent,DataInscriere,ID_Ciclu,MediaInscriere, id_grupa ,ID_ProgramStudii FROM studenti";
+                        string query = "SELECT NumeStudent,PrenumeStudent,DataInscriere,ID_Ciclu,MediaInscriere, id_grupa ,ID_ProgramStudii, ID_Student FROM studenti";
 
                         MySqlCommand command = new MySqlCommand(query, connection);
 
@@ -38,13 +38,17 @@ namespace Aplicatie
                             {
                                 string numeStudent = reader.GetString(0);
                                 string prenumeStudent = reader.GetString(1);
-                                string dataInscriere = reader.GetString(2);
+                                DateTime dataInscriere = reader.GetDateTime(2);
                                 int idCiclu = reader.GetInt32(3);
                                 int mediaInscriere = (int)reader.GetDouble(4);
-                                int program = reader.GetInt32(5);
-                                int grupa = reader.GetInt32(6);
-                                dataGridView1.Rows.Add(numeStudent, prenumeStudent, program, idCiclu, dataInscriere, mediaInscriere);
+                                int program = reader.GetInt32(6);
+                                int grupa = reader.GetInt32(5);
+                                int idStudent = reader.GetInt32(6);
+                                dataGridView1.Rows.Add(idStudent, numeStudent, prenumeStudent, program, idCiclu, dataInscriere.ToString("yyyy-MM-dd"), mediaInscriere);
                             }
+
+                            dataGridView1.Refresh();
+
                         }
                     }
                     catch (Exception ex)

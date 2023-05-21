@@ -28,12 +28,77 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "ImportareGrupe";
+            textBox2 = new TextBox();
+            label2 = new Label();
+            label1 = new Label();
+            button1 = new Button();
+            textBox1 = new TextBox();
+            SuspendLayout();
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(12, 132);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(133, 23);
+            textBox2.TabIndex = 9;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(12, 98);
+            label2.Name = "label2";
+            label2.Size = new Size(125, 15);
+            label2.TabIndex = 8;
+            label2.Text = "Ultimul an de inscriere";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(12, 23);
+            label1.Name = "label1";
+            label1.Size = new Size(104, 15);
+            label1.TabIndex = 7;
+            label1.Text = "Numarul de grupe";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(37, 171);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 6;
+            button1.Text = "Genereaza";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(12, 53);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(133, 23);
+            textBox1.TabIndex = 5;
+            // 
+            // ImportareGrupe
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(159, 241);
+            Controls.Add(textBox2);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(button1);
+            Controls.Add(textBox1);
+            Name = "ImportareGrupe";
+            Text = "ImportareGrupe";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private TextBox textBox2;
+        private Label label2;
+        private Label label1;
+        private Button button1;
+        private TextBox textBox1;
     }
 }

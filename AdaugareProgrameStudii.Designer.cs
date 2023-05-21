@@ -52,7 +52,6 @@
             label1.Size = new Size(123, 15);
             label1.TabIndex = 1;
             label1.Text = "Numarul Programului";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -86,7 +85,6 @@
             Cicluri.Name = "Cicluri";
             Cicluri.Size = new Size(127, 23);
             Cicluri.TabIndex = 6;
-            Cicluri.SelectedIndexChanged += Cicluri_SelectedIndexChanged;
             // 
             // button1
             // 

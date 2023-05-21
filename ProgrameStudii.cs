@@ -43,6 +43,8 @@ namespace Aplicatie
                                 int idCiclu = reader.GetInt32(2);
                                 dataGridView1.Rows.Add(idProgram, numeProgram, idCiclu);
                             }
+
+                            dataGridView1.DataSource = reader;
                         }
                     }
                     catch (Exception ex)
