@@ -23,6 +23,10 @@ namespace Aplicatie
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+
+            
             using (MySqlConnection connection = new MySqlConnection(Global.connectionString))
             {
                 if (connection != null)
@@ -112,6 +116,11 @@ namespace Aplicatie
                     MessageBox.Show("Conexiunea la baza de date nu a putut fi stabilită!");
                 }
             }
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -121,7 +130,7 @@ namespace Aplicatie
 
         private void GenerareGrupe_Load(object sender, EventArgs e)
         {
-           
+
 
         }
     }

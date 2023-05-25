@@ -116,14 +116,30 @@ namespace Aplicatie
         }
         private void btnAdauga_Click(object sender, EventArgs e)
         {
-            Insert(sender, e);
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+                Insert(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+           
         }
 
         private void btnSterge_Click(object sender, EventArgs e)
         {
-            CI_DeleteDialog Delete_CI = new CI_DeleteDialog();
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+                CI_DeleteDialog Delete_CI = new CI_DeleteDialog();
             Delete_CI.FormClosing += new FormClosingEventHandler(this.Form2_FormClosing);
             Delete_CI.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+            
 
         }
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)

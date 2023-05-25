@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirstPage));
             pictureBox2 = new PictureBox();
             panel1 = new Panel();
+            label_U = new Label();
+            button5 = new Button();
+            buttonD = new Button();
             buttonS = new Button();
             btn_anistudiu = new Button();
             btn_grupe = new Button();
@@ -38,10 +41,8 @@
             button2 = new Button();
             button3 = new Button();
             button1 = new Button();
-            button5 = new Button();
             mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             mySqlCommand2 = new MySql.Data.MySqlClient.MySqlCommand();
-            buttonD = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -49,7 +50,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(1625, 157);
+            pictureBox2.Location = new Point(13, 420);
             pictureBox2.Margin = new Padding(3, 4, 3, 4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(57, 67);
@@ -60,6 +61,9 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(192, 192, 255);
+            panel1.Controls.Add(label_U);
+            panel1.Controls.Add(button5);
+            panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(buttonD);
             panel1.Controls.Add(buttonS);
             panel1.Controls.Add(btn_anistudiu);
@@ -71,9 +75,47 @@
             panel1.Location = new Point(14, 16);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1669, 707);
+            panel1.Size = new Size(1052, 496);
             panel1.TabIndex = 2;
             panel1.Paint += panel1_Paint;
+            // 
+            // label_U
+            // 
+            label_U.AutoSize = true;
+            label_U.Location = new Point(86, 450);
+            label_U.Name = "label_U";
+            label_U.Size = new Size(98, 20);
+            label_U.TabIndex = 9;
+            label_U.Text = "Logged in as "+Global.utilizator;
+            // 
+            // button5
+            // 
+            button5.BackColor = Color.IndianRed;
+            button5.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
+            button5.ForeColor = Color.AliceBlue;
+            button5.Location = new Point(869, 380);
+            button5.Margin = new Padding(3, 4, 3, 4);
+            button5.Name = "button5";
+            button5.Size = new Size(166, 107);
+            button5.TabIndex = 4;
+            button5.Text = "LOG OUT";
+            button5.UseVisualStyleBackColor = false;
+            button5.Click += button5_Click;
+            // 
+            // buttonD
+            // 
+            buttonD.BackColor = Color.FromArgb(255, 128, 128);
+            buttonD.FlatAppearance.BorderSize = 0;
+            buttonD.FlatStyle = FlatStyle.Flat;
+            buttonD.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonD.Location = new Point(728, 141);
+            buttonD.Margin = new Padding(3, 4, 3, 4);
+            buttonD.Name = "buttonD";
+            buttonD.Size = new Size(201, 107);
+            buttonD.TabIndex = 7;
+            buttonD.Text = "Discipline";
+            buttonD.UseVisualStyleBackColor = false;
+            buttonD.Click += buttonD_Click;
             // 
             // buttonS
             // 
@@ -81,7 +123,7 @@
             buttonS.FlatAppearance.BorderSize = 0;
             buttonS.FlatStyle = FlatStyle.Flat;
             buttonS.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonS.Location = new Point(1352, 16);
+            buttonS.Location = new Point(520, 143);
             buttonS.Margin = new Padding(3, 4, 3, 4);
             buttonS.Name = "buttonS";
             buttonS.Size = new Size(201, 105);
@@ -96,7 +138,7 @@
             btn_anistudiu.FlatAppearance.BorderSize = 0;
             btn_anistudiu.FlatStyle = FlatStyle.Flat;
             btn_anistudiu.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_anistudiu.Location = new Point(1144, 15);
+            btn_anistudiu.Location = new Point(312, 141);
             btn_anistudiu.Margin = new Padding(3, 4, 3, 4);
             btn_anistudiu.Name = "btn_anistudiu";
             btn_anistudiu.Size = new Size(201, 107);
@@ -111,7 +153,7 @@
             btn_grupe.FlatAppearance.BorderSize = 0;
             btn_grupe.FlatStyle = FlatStyle.Flat;
             btn_grupe.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_grupe.Location = new Point(936, 15);
+            btn_grupe.Location = new Point(104, 141);
             btn_grupe.Margin = new Padding(3, 4, 3, 4);
             btn_grupe.Name = "btn_grupe";
             btn_grupe.Size = new Size(201, 107);
@@ -179,20 +221,6 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // button5
-            // 
-            button5.BackColor = Color.IndianRed;
-            button5.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point);
-            button5.ForeColor = Color.AliceBlue;
-            button5.Location = new Point(1517, 932);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(166, 107);
-            button5.TabIndex = 4;
-            button5.Text = "LOG OUT";
-            button5.UseVisualStyleBackColor = false;
-            button5.Click += button5_Click;
-            // 
             // mySqlCommand1
             // 
             mySqlCommand1.CacheAge = 0;
@@ -207,29 +235,12 @@
             mySqlCommand2.EnableCaching = false;
             mySqlCommand2.Transaction = null;
             // 
-            // buttonD
-            // 
-            buttonD.BackColor = Color.FromArgb(255, 128, 128);
-            buttonD.FlatAppearance.BorderSize = 0;
-            buttonD.FlatStyle = FlatStyle.Flat;
-            buttonD.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonD.Location = new Point(385, 229);
-            buttonD.Margin = new Padding(3, 4, 3, 4);
-            buttonD.Name = "buttonD";
-            buttonD.Size = new Size(201, 107);
-            buttonD.TabIndex = 7;
-            buttonD.Text = "Discipline";
-            buttonD.UseVisualStyleBackColor = false;
-            buttonD.Click += buttonD_Click;
-            // 
             // FirstPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1696, 1055);
-            Controls.Add(pictureBox2);
-            Controls.Add(button5);
+            ClientSize = new Size(1078, 520);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Margin = new Padding(3, 4, 3, 4);
@@ -239,6 +250,7 @@
             Load += Form2_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -259,5 +271,6 @@
         private Button btn_grupe;
         private Button btn_anistudiu;
         private Button buttonD;
+        private Label label_U;
     }
 }

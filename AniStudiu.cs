@@ -50,14 +50,29 @@ namespace Aplicatie
 
         private void button1_Click(object sender, EventArgs e)
         {
-            AdaugareAniStudiu adauga = new AdaugareAniStudiu();
-            adauga.Show();
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+                AdaugareAniStudiu adauga = new AdaugareAniStudiu();
+                adauga.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            StergereAniStudiu sterge = new StergereAniStudiu();
-            sterge.Show();
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+                StergereAniStudiu sterge = new StergereAniStudiu();
+                sterge.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+            
         }
     }
 }

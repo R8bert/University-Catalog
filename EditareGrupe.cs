@@ -21,6 +21,10 @@ namespace Aplicatie
 
         private void adaugareStudent_Click(object sender, EventArgs e)
         {
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+
+            
             int studentId = int.Parse(textBox1.Text);
             int groupId = int.Parse(textBox2.Text);
 
@@ -60,10 +64,19 @@ namespace Aplicatie
                     MessageBox.Show("Conexiunea la baza de date nu a putut fi stabilită!");
                 }
             }
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
         }
 
         private void stergeStudent_Click(object sender, EventArgs e)
         {
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+
+            
             int studentId = int.Parse(textBox1.Text);
             int groupId = int.Parse(textBox2.Text);
 
@@ -102,6 +115,11 @@ namespace Aplicatie
                 {
                     MessageBox.Show("Conexiunea la baza de date nu a putut fi stabilită!");
                 }
+            }
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
             }
         }
     }

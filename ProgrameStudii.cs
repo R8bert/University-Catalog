@@ -70,15 +70,30 @@ namespace Aplicatie
 
         private void adaugare_Click(object sender, EventArgs e)
         {
-
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
             AdaugareProgrameStudii adaugareprograme = new AdaugareProgrameStudii();
             adaugareprograme.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
             StergereProgrameStudii stergereprograme = new StergereProgrameStudii();
             stergereprograme.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+           
         }
     }
 }

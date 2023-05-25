@@ -123,9 +123,17 @@ namespace Aplicatie
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            CD_AddCD ADD_CadruD = new CD_AddCD();
-            ADD_CadruD.FormClosing += new FormClosingEventHandler(this.Insert_FormClosing);
-            ADD_CadruD.ShowDialog();
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+               CD_AddCD ADD_CadruD = new CD_AddCD();
+                ADD_CadruD.FormClosing += new FormClosingEventHandler(this.Insert_FormClosing);
+                ADD_CadruD.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+            
         }
         private async void Insert_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -175,9 +183,17 @@ namespace Aplicatie
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            CD_DeleteDialog cD_DeleteDialog = new CD_DeleteDialog();
-            cD_DeleteDialog.FormClosing += new FormClosingEventHandler(this.Insert_FormClosing);
-            cD_DeleteDialog.ShowDialog();
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+                CD_DeleteDialog cD_DeleteDialog = new CD_DeleteDialog();
+                cD_DeleteDialog.FormClosing += new FormClosingEventHandler(this.Insert_FormClosing);
+                cD_DeleteDialog.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+            
 
 
         }

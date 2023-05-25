@@ -69,20 +69,44 @@ namespace Aplicatie
 
         private void button1_Click(object sender, EventArgs e)
         {
-            GenerareGrupe generare = new GenerareGrupe();
-            generare.Show();
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+                GenerareGrupe generare = new GenerareGrupe();
+                generare.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ImportareGrupe import = new ImportareGrupe();
-            import.Show();
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+                ImportareGrupe import = new ImportareGrupe();
+                import.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            EditareGrupe edit = new EditareGrupe();
-            edit.Show();
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+                EditareGrupe edit = new EditareGrupe();
+                edit.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+            
         }
     }
 }

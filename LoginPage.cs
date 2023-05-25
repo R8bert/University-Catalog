@@ -7,9 +7,11 @@ using MySql.Data.MySqlClient;
 
 namespace Aplicatie
 {
+
     public partial class LoginPage : Form
     {
         //string connectionString = "datasource=127.0.0.1;port=3306;database=catalog;user=root;password=";
+
 
         public LoginPage()
         {
@@ -30,6 +32,41 @@ namespace Aplicatie
         {
             string enterUsername = enteredUsername.Text;
             string enterPassword = enteredPassword.Text;
+            using (MySqlConnection connection = new MySqlConnection(Global.connectionString))
+            {
+                if (connection != null)
+                {
+                    try
+                    {
+                        string query = "SELECT Permisiuni FROM utilizatori WHERE NumeUtilizator=";
+                        query += enterUsername;
+
+                        MySqlCommand command = new MySqlCommand(query, connection);
+
+                        connection.Open();
+
+                        using (MySqlDataReader reader = command.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                Global.utilizator = reader.GetString(0);
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("A apărut o eroare: " + ex.Message);
+                    }
+                    finally
+                    {
+                        connection.Close();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Conexiunea la baza de date nu a putut fi stabilită!");
+                }
+            }
 
             //string connectionString = "your_connection_string_here"; // Înlocuiți cu detaliile corespunzătoare ale conexiunii la baza de date
 
@@ -95,5 +132,5 @@ namespace Aplicatie
 public static class Global
 {
     public const string connectionString = "server=www.db4free.net;port=3306;database=catalog;user=proiectpoo;password=proiectpoo;";
-
+    public static string utilizator = "";
 }

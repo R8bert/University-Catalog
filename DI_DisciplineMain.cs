@@ -65,16 +65,32 @@ namespace Aplicatie
 
         private void buttonAd_Click(object sender, EventArgs e)
         {
-            DI_Adaugare dia = new DI_Adaugare();
-            dia.FormClosing += new FormClosingEventHandler(this.Discipline_Load);
-            dia.ShowDialog();
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+                DI_Adaugare dia = new DI_Adaugare();
+                dia.FormClosing += new FormClosingEventHandler(this.Discipline_Load);
+                dia.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+           
         }
 
         private void buttonS_Click(object sender, EventArgs e)
         {
-            DI_Stergere dis = new DI_Stergere();
-            dis.FormClosing += new FormClosingEventHandler(this.Discipline_Load);
-            dis.ShowDialog();
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+                DI_Stergere dis = new DI_Stergere();
+                dis.FormClosing += new FormClosingEventHandler(this.Discipline_Load);
+                dis.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+            
         }
     }
 }

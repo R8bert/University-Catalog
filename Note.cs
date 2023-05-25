@@ -71,16 +71,31 @@ namespace Aplicatie
 
         private void button_adn_Click(object sender, EventArgs e)
         {
-            CN_AdaugareNota adn = new CN_AdaugareNota();
-            adn.FormClosing += new FormClosingEventHandler(this.Note_Load);
-            adn.ShowDialog();
-            //adn.Show();
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar" || Global.utilizator=="cadru")
+            {
+                CN_AdaugareNota adn = new CN_AdaugareNota();
+                adn.FormClosing += new FormClosingEventHandler(this.Note_Load);
+                adn.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+            
         }
 
         private void button_gc_Click(object sender, EventArgs e)
         {
-            CN_Salvare sv = new CN_Salvare();
-            sv.ShowDialog();
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar" || Global.utilizator=="cadru")
+            {
+                CN_Salvare sv = new CN_Salvare();
+                sv.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

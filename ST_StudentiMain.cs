@@ -68,16 +68,32 @@ namespace Aplicatie
 
         private void button_Ad_Click(object sender, EventArgs e)
         {
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
             ST_AdaugareStudent ada = new ST_AdaugareStudent();
             ada.FormClosing += new FormClosingEventHandler(this.Studenti_Load);
             ada.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+           
         }
 
         private void button_S_Click(object sender, EventArgs e)
         {
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
             ST_StergereStudent ads = new ST_StergereStudent();
             ads.FormClosing += new FormClosingEventHandler(this.Studenti_Load);
             ads.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+            
         }
     }
 }
