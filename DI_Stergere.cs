@@ -11,16 +11,16 @@ using System.Windows.Forms;
 
 namespace Aplicatie
 {
-    public partial class ST_StergereStudent : Form
+    public partial class DI_Stergere : Form
     {
-        public ST_StergereStudent()
+        public DI_Stergere()
         {
             InitializeComponent();
         }
 
-        private void button_St_Click(object sender, EventArgs e)
+        private void button_S_Click(object sender, EventArgs e)
         {
-            if (textBox_IDS.Text != "")
+            if (textBox_IDD.Text != "")
             {
                 using (MySqlConnection connection = new MySqlConnection(Global.connectionString))
                 {
@@ -28,8 +28,8 @@ namespace Aplicatie
                     {
                         try
                         {
-                            string query = "DELETE FROM studenti WHERE ID_Student=";
-                            query += textBox_IDS.Text;
+                            string query = "DELETE FROM planuriinvatamant WHERE ID_Disciplina=";
+                            query += textBox_IDD.Text;
 
                             MySqlCommand command = new MySqlCommand(query, connection);
 
@@ -39,7 +39,7 @@ namespace Aplicatie
                             {
 
                             }
-                            MessageBox.Show("Student sters");
+                            MessageBox.Show("Disciplina stearsa");
                         }
                         catch (Exception ex)
                         {
@@ -58,7 +58,7 @@ namespace Aplicatie
             }
             else
             {
-                MessageBox.Show("Introduceti ID Student");
+                MessageBox.Show("Introduceti ID Disciplina");
             }
         }
     }

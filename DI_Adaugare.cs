@@ -8,29 +8,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Aplicatie
 {
-    public partial class ST_StergereStudent : Form
+    public partial class DI_Adaugare : Form
     {
-        public ST_StergereStudent()
+        public DI_Adaugare()
         {
             InitializeComponent();
         }
 
-        private void button_St_Click(object sender, EventArgs e)
+        private void button_Ad_Click(object sender, EventArgs e)
         {
-            if (textBox_IDS.Text != "")
+            if (textBox_IDD.Text != "" && textBox_ND.Text != "" && textBox_AD.Text != "" && textBox_NC.Text != "" && textBox_IDA.Text != "")
             {
+                string idd = textBox_IDD.Text;
+                string nd = textBox_ND.Text;
+                string ad = textBox_AD.Text;
+                string nc = textBox_NC.Text;
+                string ida = textBox_IDA.Text;
                 using (MySqlConnection connection = new MySqlConnection(Global.connectionString))
                 {
                     if (connection != null)
                     {
                         try
                         {
-                            string query = "DELETE FROM studenti WHERE ID_Student=";
-                            query += textBox_IDS.Text;
-
+                            string query = "INSERT INTO `planuriinvatamant` (ID_Disciplina,NumeDisciplina,AcronimDisciplina,NumarCredite,ID_An) VALUES ('";
+                            query += idd + "','" + nd + "','" + ad + "','" + nc + "','" + ida + "');";
                             MySqlCommand command = new MySqlCommand(query, connection);
 
                             connection.Open();
@@ -39,7 +44,7 @@ namespace Aplicatie
                             {
 
                             }
-                            MessageBox.Show("Student sters");
+                            MessageBox.Show("Disciplina Adaugata");
                         }
                         catch (Exception ex)
                         {
@@ -58,7 +63,7 @@ namespace Aplicatie
             }
             else
             {
-                MessageBox.Show("Introduceti ID Student");
+                MessageBox.Show("Nu se poate adauga o disciplina cu date incomplete", "Eroare");
             }
         }
     }

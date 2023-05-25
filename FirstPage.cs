@@ -93,5 +93,11 @@ namespace Aplicatie
             AniStudiu ani = new AniStudiu();
             ani.ShowDialog();
         }
+
+        private void buttonD_Click(object sender, EventArgs e)
+        {
+            DI_DisciplineMain DI = new DI_DisciplineMain();
+            DI.ShowDialog();
+        }
     }
 }

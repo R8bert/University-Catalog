@@ -61,7 +61,7 @@ namespace Aplicatie
                         {
                             connection.Close();
                         }
-                        csv.WriteLine("Nume,Prenume,Disciplina,Note");
+                        csv.WriteLine("Nume,Prenume,Note");
                         for (int i = 0; i < nrid; i++)
                         {
                             try
@@ -76,6 +76,7 @@ namespace Aplicatie
                                 query += id;
                                 float media = 0;
                                 float nr = 0;
+                                int restantier = 0;
                                 MySqlCommand command = new MySqlCommand(query, connection);
                                 connection.Open();
                                 using (MySqlDataReader reader = command.ExecuteReader())
@@ -94,17 +95,28 @@ namespace Aplicatie
                                         }
                                         if (x == 0)
                                         {
-                                            csv.Write(nume + "," + prenume + "," + Disciplina + "," + Nota.ToString());
+                                            csv.Write(nume + "," + prenume + "," + Nota.ToString());
                                         }
                                         else
                                         {
                                             csv.Write("," + Nota);
                                         }
+                                        if(Nota<5)
+                                        {
+                                            restantier++;
+                                        }
                                         x++;
                                     }
                                     media /= nr;
-                                    csv.WriteLine(", ," + media.ToString());
-                                    
+                                    csv.Write(", ," + media.ToString());
+                                    if(restantier==0)
+                                    {
+                                        csv.WriteLine(",integralist");
+                                    }
+                                    else
+                                    {
+                                        csv.WriteLine(",restantier");
+                                    }
                                 }
                             }
                             catch (Exception ex)
