@@ -39,7 +39,7 @@
             // 
             // NumarProgram
             // 
-            NumarProgram.Location = new Point(12, 67);
+            NumarProgram.Location = new Point(27, 67);
             NumarProgram.Name = "NumarProgram";
             NumarProgram.Size = new Size(171, 23);
             NumarProgram.TabIndex = 0;
@@ -47,7 +47,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(35, 37);
+            label1.Location = new Point(50, 30);
             label1.Name = "label1";
             label1.Size = new Size(123, 15);
             label1.TabIndex = 1;
@@ -56,7 +56,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(40, 117);
+            label2.Location = new Point(55, 112);
             label2.Name = "label2";
             label2.Size = new Size(118, 15);
             label2.TabIndex = 3;
@@ -64,7 +64,7 @@
             // 
             // NumeProgram
             // 
-            NumeProgram.Location = new Point(12, 153);
+            NumeProgram.Location = new Point(27, 149);
             NumeProgram.Name = "NumeProgram";
             NumeProgram.Size = new Size(171, 23);
             NumeProgram.TabIndex = 2;
@@ -72,7 +72,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(75, 200);
+            label3.Location = new Point(90, 194);
             label3.Name = "label3";
             label3.Size = new Size(37, 15);
             label3.TabIndex = 5;
@@ -81,14 +81,14 @@
             // Cicluri
             // 
             Cicluri.FormattingEnabled = true;
-            Cicluri.Location = new Point(31, 231);
+            Cicluri.Location = new Point(46, 231);
             Cicluri.Name = "Cicluri";
             Cicluri.Size = new Size(127, 23);
             Cicluri.TabIndex = 6;
             // 
             // button1
             // 
-            button1.Location = new Point(58, 285);
+            button1.Location = new Point(73, 276);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 7;

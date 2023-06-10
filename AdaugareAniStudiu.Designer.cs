@@ -39,14 +39,14 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(12, 63);
+            textBox1.Location = new Point(27, 56);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(139, 23);
             textBox1.TabIndex = 0;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(12, 128);
+            textBox2.Location = new Point(27, 121);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(139, 23);
             textBox2.TabIndex = 1;
@@ -54,7 +54,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(21, 32);
+            label1.Location = new Point(78, 25);
             label1.Name = "label1";
             label1.Size = new Size(36, 15);
             label1.TabIndex = 3;
@@ -64,7 +64,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(21, 99);
+            label2.Location = new Point(67, 92);
             label2.Name = "label2";
             label2.Size = new Size(58, 15);
             label2.TabIndex = 4;
@@ -73,7 +73,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(21, 172);
+            label3.Location = new Point(63, 165);
             label3.Name = "label3";
             label3.Size = new Size(67, 15);
             label3.TabIndex = 5;
@@ -81,7 +81,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(21, 261);
+            button1.Location = new Point(39, 254);
             button1.Name = "button1";
             button1.Size = new Size(114, 23);
             button1.TabIndex = 6;
@@ -92,7 +92,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(12, 208);
+            comboBox1.Location = new Point(27, 201);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(139, 23);
             comboBox1.TabIndex = 7;

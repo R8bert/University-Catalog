@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
             idStudent = new DataGridViewTextBoxColumn();
             nume = new DataGridViewTextBoxColumn();
             prenume = new DataGridViewTextBoxColumn();
@@ -40,6 +37,9 @@
             an = new DataGridViewTextBoxColumn();
             medie = new DataGridViewTextBoxColumn();
             contor = new DataGridViewTextBoxColumn();
+            button1 = new Button();
+            button2 = new Button();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
@@ -52,36 +52,6 @@
             dataGridView1.RowTemplate.Height = 25;
             dataGridView1.Size = new Size(744, 387);
             dataGridView1.TabIndex = 0;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(893, 30);
-            button1.Name = "button1";
-            button1.Size = new Size(136, 66);
-            button1.TabIndex = 1;
-            button1.Text = "Generare automata a grupelor";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(893, 118);
-            button2.Name = "button2";
-            button2.Size = new Size(136, 66);
-            button2.TabIndex = 2;
-            button2.Text = "Importare grupe";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(893, 204);
-            button3.Name = "button3";
-            button3.Size = new Size(136, 66);
-            button3.TabIndex = 3;
-            button3.Text = "Editare grupe";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
             // idStudent
             // 
@@ -123,11 +93,41 @@
             contor.HeaderText = "Contor";
             contor.Name = "contor";
             // 
+            // button1
+            // 
+            button1.Location = new Point(772, 74);
+            button1.Name = "button1";
+            button1.Size = new Size(136, 66);
+            button1.TabIndex = 1;
+            button1.Text = "Generare automata a grupelor";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(772, 162);
+            button2.Name = "button2";
+            button2.Size = new Size(136, 66);
+            button2.TabIndex = 2;
+            button2.Text = "Importare grupe";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(772, 248);
+            button3.Name = "button3";
+            button3.Size = new Size(136, 66);
+            button3.TabIndex = 3;
+            button3.Text = "Editare grupe";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // Grupe
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1056, 450);
+            ClientSize = new Size(931, 425);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);

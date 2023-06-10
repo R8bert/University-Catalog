@@ -78,7 +78,7 @@ namespace Aplicatie
             {
                 MessageBox.Show("Nu aveti permisiunea");
             }
-           
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace Aplicatie
             {
                 MessageBox.Show("Nu aveti permisiunea");
             }
-            
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -106,7 +106,7 @@ namespace Aplicatie
             {
                 MessageBox.Show("Nu aveti permisiunea");
             }
-            
+
         }
     }
 }
