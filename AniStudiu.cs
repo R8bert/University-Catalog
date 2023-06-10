@@ -26,13 +26,19 @@ namespace Aplicatie
                 {
                     string query = "SELECT ID_An, NumeAn, ID_Program FROM anistudii";
                     MySqlCommand command = new MySqlCommand(query, connection);
-                    if (connection.State != ConnectionState.Open)
-                    { connection.Open(); }
+                    connection.Open();
                     using (MySqlDataReader reader = command.ExecuteReader())
                     {
                         DataTable dataTable = new DataTable();
                         dataTable.Load(reader);
-                        dataGridView1.DataSource = dataTable;
+                        dataGridView1.Rows.Clear();
+                        foreach (DataRow item in dataTable.Rows)
+                        {
+                            int n = dataGridView1.Rows.Add();
+                            dataGridView1.Rows[n].Cells[0].Value = $"{item[0]}";
+                            dataGridView1.Rows[n].Cells[1].Value = $"{item[1]}";
+                            dataGridView1.Rows[n].Cells[2].Value = $"{item[2]}";
+                        }
                         dataGridView1.ReadOnly = true;
                     }
                 }
