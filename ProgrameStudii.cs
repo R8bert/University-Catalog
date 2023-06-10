@@ -23,19 +23,16 @@ namespace Aplicatie
         {
             using (MySqlConnection connection = new MySqlConnection(Global.connectionString))
             {
-                if (connection != null)
+                try
                 {
-                    try
+                    string query = "SELECT ID_Program, NumeProgram, ID_Ciclu FROM programestudii";
+
+                    connection.Open();
+
+                    using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
-                        string query = "SELECT ID_Program,NumeProgram, ID_Ciclu FROM programestudii";
-
-                        MySqlCommand command = new MySqlCommand(query, connection);
-
-                        connection.Open();
-
                         using (MySqlDataReader reader = command.ExecuteReader())
                         {
-
                             while (reader.Read())
                             {
                                 int idProgram = reader.GetInt32(0);
@@ -43,22 +40,16 @@ namespace Aplicatie
                                 int idCiclu = reader.GetInt32(2);
                                 dataGridView1.Rows.Add(idProgram, numeProgram, idCiclu);
                             }
-
-                            dataGridView1.DataSource = reader;
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show("A apărut o eroare: " + ex.Message);
-                    }
-                    finally
-                    {
-                        connection.Close();
-                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("Conexiunea la baza de date nu a putut fi stabilită!");
+                    MessageBox.Show("A apărut o eroare: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
                 }
             }
         }
