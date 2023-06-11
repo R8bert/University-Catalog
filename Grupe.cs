@@ -16,8 +16,10 @@ namespace Aplicatie
         public Grupe()
         {
             InitializeComponent();
+            PopulateDataGridView();
         }
-        private void Grupe_Load(object sender, EventArgs e)
+
+        private void PopulateDataGridView()
         {
             using (MySqlConnection connection = new MySqlConnection(Global.connectionString))
             {
@@ -25,8 +27,7 @@ namespace Aplicatie
                 {
                     try
                     {
-                        string query = "SELECT NumeStudent,PrenumeStudent,DataInscriere,ID_Ciclu,MediaInscriere, id_grupa ,ID_ProgramStudii, ID_Student FROM studenti";
-
+                        string query = "SELECT grupe.Id_Grupa, grupe.NumeGrupa, studenti.ID_Student, grupe.ID_An FROM grupe INNER JOIN studenti ON grupe.ID_Grupa = studenti.ID_Grupa";
                         MySqlCommand command = new MySqlCommand(query, connection);
 
                         connection.Open();
@@ -36,15 +37,11 @@ namespace Aplicatie
 
                             while (reader.Read())
                             {
-                                string numeStudent = reader.GetString(0);
-                                string prenumeStudent = reader.GetString(1);
-                                DateTime dataInscriere = reader.GetDateTime(2);
-                                int idCiclu = reader.GetInt32(3);
-                                int mediaInscriere = (int)reader.GetDouble(4);
-                                int program = reader.GetInt32(6);
-                                int grupa = reader.GetInt32(5);
-                                int idStudent = reader.GetInt32(6);
-                                dataGridView1.Rows.Add(idStudent, numeStudent, prenumeStudent, program, idCiclu, dataInscriere.ToString("yyyy-MM-dd"), mediaInscriere);
+                                int idGrupa = reader.GetInt32(0);
+                                string numeGrupa = reader.GetString(1);
+                                int idStudent = reader.GetInt32(2);
+                                int idAn = reader.GetInt32(3);
+                                dataGridView1.Rows.Add(idGrupa, numeGrupa, idStudent, idAn);
                             }
 
                             dataGridView1.Refresh();
@@ -107,6 +104,37 @@ namespace Aplicatie
                 MessageBox.Show("Nu aveti permisiunea");
             }
 
+        }
+
+        private void Grupe_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+                AdaugareGrupe adaugare = new AdaugareGrupe();
+                adaugare.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
+            {
+                AdaugareGrupe adaugare = new AdaugareGrupe();
+                adaugare.Show();
+            }
+            else
+            {
+                MessageBox.Show("Nu aveti permisiunea");
+            }
         }
     }
 }

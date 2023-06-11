@@ -24,46 +24,46 @@ namespace Aplicatie
             if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
             {
 
-            
-            int studentId = int.Parse(textBox1.Text);
-            int groupId = int.Parse(textBox2.Text);
 
-            using (MySqlConnection connection = new MySqlConnection(Global.connectionString))
-            {
-                if (connection != null)
+                int studentId = int.Parse(textBox1.Text);
+                int groupId = int.Parse(textBox2.Text);
+
+                using (MySqlConnection connection = new MySqlConnection(Global.connectionString))
                 {
-                    try
+                    if (connection != null)
                     {
-                        connection.Open();
-
-                        MySqlCommand cmd = new MySqlCommand("UPDATE studenti SET id_grupa = @grupa WHERE ID_Student = @id", connection);
-                        cmd.Parameters.AddWithValue("@id", studentId);
-                        cmd.Parameters.AddWithValue("@grupa", groupId);
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
+                        try
                         {
-                            MessageBox.Show("Studentul a fost actualizat cu succes în grupa " + groupId);
+                            connection.Open();
+
+                            MySqlCommand cmd = new MySqlCommand("UPDATE studenti SET id_grupa = @grupa WHERE ID_Student = @id", connection);
+                            cmd.Parameters.AddWithValue("@id", studentId);
+                            cmd.Parameters.AddWithValue("@grupa", groupId);
+                            int rowsAffected = cmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Studentul a fost actualizat cu succes în grupa " + groupId);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Studentul nu a putut fi actualizat în grupa " + groupId);
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("Studentul nu a putut fi actualizat în grupa " + groupId);
+                            MessageBox.Show("A apărut o eroare: " + ex.Message);
+                        }
+                        finally
+                        {
+                            connection.Close();
                         }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("A apărut o eroare: " + ex.Message);
-                    }
-                    finally
-                    {
-                        connection.Close();
+                        MessageBox.Show("Conexiunea la baza de date nu a putut fi stabilită!");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Conexiunea la baza de date nu a putut fi stabilită!");
-                }
-            }
             }
             else
             {
@@ -76,51 +76,56 @@ namespace Aplicatie
             if (Global.utilizator == "admin" || Global.utilizator == "secreatar")
             {
 
-            
-            int studentId = int.Parse(textBox1.Text);
-            int groupId = int.Parse(textBox2.Text);
 
-            using (MySqlConnection connection = new MySqlConnection(Global.connectionString))
-            {
-                if (connection != null)
+                int studentId = int.Parse(textBox1.Text);
+                int groupId = int.Parse(textBox2.Text);
+
+                using (MySqlConnection connection = new MySqlConnection(Global.connectionString))
                 {
-                    try
+                    if (connection != null)
                     {
-                        connection.Open();
-
-                        MySqlCommand cmd = new MySqlCommand("UPDATE studenti SET id_grupa = NULL WHERE ID_Student = @id AND id_grupa = @grupa", connection);
-                        cmd.Parameters.AddWithValue("@id", studentId);
-                        cmd.Parameters.AddWithValue("@grupa", groupId);
-                        int rowsAffected = cmd.ExecuteNonQuery();
-
-                        if (rowsAffected > 0)
+                        try
                         {
-                            MessageBox.Show("Studentul a fost eliminat cu succes din grupa " + groupId);
+                            connection.Open();
+
+                            MySqlCommand cmd = new MySqlCommand("UPDATE studenti SET id_grupa = NULL WHERE ID_Student = @id AND id_grupa = @grupa", connection);
+                            cmd.Parameters.AddWithValue("@id", studentId);
+                            cmd.Parameters.AddWithValue("@grupa", groupId);
+                            int rowsAffected = cmd.ExecuteNonQuery();
+
+                            if (rowsAffected > 0)
+                            {
+                                MessageBox.Show("Studentul a fost eliminat cu succes din grupa " + groupId);
+                            }
+                            else
+                            {
+                                MessageBox.Show("Studentul nu a fost găsit în grupa " + groupId);
+                            }
                         }
-                        else
+                        catch (Exception ex)
                         {
-                            MessageBox.Show("Studentul nu a fost găsit în grupa " + groupId);
+                            MessageBox.Show("A apărut o eroare: " + ex.Message);
+                        }
+                        finally
+                        {
+                            connection.Close();
                         }
                     }
-                    catch (Exception ex)
+                    else
                     {
-                        MessageBox.Show("A apărut o eroare: " + ex.Message);
-                    }
-                    finally
-                    {
-                        connection.Close();
+                        MessageBox.Show("Conexiunea la baza de date nu a putut fi stabilită!");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Conexiunea la baza de date nu a putut fi stabilită!");
-                }
-            }
             }
             else
             {
                 MessageBox.Show("Nu aveti permisiunea");
             }
+        }
+
+        private void EditareGrupe_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -101,6 +101,7 @@
             Controls.Add(adaugareStudent);
             Name = "EditareGrupe";
             Text = "EditareGrupe";
+            Load += EditareGrupe_Load;
             ResumeLayout(false);
             PerformLayout();
         }

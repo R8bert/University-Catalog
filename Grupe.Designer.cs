@@ -29,73 +29,51 @@
         private void InitializeComponent()
         {
             dataGridView1 = new DataGridView();
+            Id_Grupa = new DataGridViewTextBoxColumn();
+            Nume_Grupa = new DataGridViewTextBoxColumn();
             idStudent = new DataGridViewTextBoxColumn();
-            nume = new DataGridViewTextBoxColumn();
-            prenume = new DataGridViewTextBoxColumn();
-            program = new DataGridViewTextBoxColumn();
-            ciclu = new DataGridViewTextBoxColumn();
-            an = new DataGridViewTextBoxColumn();
-            medie = new DataGridViewTextBoxColumn();
-            contor = new DataGridViewTextBoxColumn();
+            Id_An = new DataGridViewTextBoxColumn();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
+            button4 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { idStudent, nume, prenume, program, ciclu, an, medie, contor });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Id_Grupa, Nume_Grupa, idStudent, Id_An });
             dataGridView1.Location = new Point(0, 0);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(744, 387);
+            dataGridView1.Size = new Size(444, 387);
             dataGridView1.TabIndex = 0;
+            // 
+            // Id_Grupa
+            // 
+            Id_Grupa.HeaderText = "ID Grupa";
+            Id_Grupa.Name = "Id_Grupa";
+            // 
+            // Nume_Grupa
+            // 
+            Nume_Grupa.HeaderText = "Nume Grupa";
+            Nume_Grupa.Name = "Nume_Grupa";
+            Nume_Grupa.ReadOnly = true;
             // 
             // idStudent
             // 
             idStudent.HeaderText = "ID Student";
             idStudent.Name = "idStudent";
             // 
-            // nume
+            // Id_An
             // 
-            nume.HeaderText = "Numele studentului";
-            nume.Name = "nume";
-            // 
-            // prenume
-            // 
-            prenume.HeaderText = "Prenumele studentului";
-            prenume.Name = "prenume";
-            // 
-            // program
-            // 
-            program.HeaderText = "Programul de studii";
-            program.Name = "program";
-            // 
-            // ciclu
-            // 
-            ciclu.HeaderText = "Ciclul de invatamant";
-            ciclu.Name = "ciclu";
-            // 
-            // an
-            // 
-            an.HeaderText = "Anul de admitere";
-            an.Name = "an";
-            // 
-            // medie
-            // 
-            medie.HeaderText = "Media de intrare";
-            medie.Name = "medie";
-            // 
-            // contor
-            // 
-            contor.HeaderText = "Contor";
-            contor.Name = "contor";
+            Id_An.HeaderText = "ID An";
+            Id_An.Name = "Id_An";
             // 
             // button1
             // 
-            button1.Location = new Point(772, 74);
+            button1.Location = new Point(490, 26);
             button1.Name = "button1";
             button1.Size = new Size(136, 66);
             button1.TabIndex = 1;
@@ -105,7 +83,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(772, 162);
+            button2.Location = new Point(490, 114);
             button2.Name = "button2";
             button2.Size = new Size(136, 66);
             button2.TabIndex = 2;
@@ -115,7 +93,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(772, 248);
+            button3.Location = new Point(490, 200);
             button3.Name = "button3";
             button3.Size = new Size(136, 66);
             button3.TabIndex = 3;
@@ -123,11 +101,22 @@
             button3.UseVisualStyleBackColor = true;
             button3.Click += button3_Click;
             // 
+            // button4
+            // 
+            button4.Location = new Point(490, 287);
+            button4.Name = "button4";
+            button4.Size = new Size(136, 66);
+            button4.TabIndex = 4;
+            button4.Text = "Adaugare grupe";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click_1;
+            // 
             // Grupe
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(931, 425);
+            ClientSize = new Size(661, 425);
+            Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -142,16 +131,13 @@
         #endregion
 
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn nume;
-        private DataGridViewTextBoxColumn prenume;
-        private DataGridViewTextBoxColumn program;
-        private DataGridViewTextBoxColumn ciclu;
-        private DataGridViewTextBoxColumn an;
-        private DataGridViewTextBoxColumn medie;
-        private DataGridViewTextBoxColumn contor;
         private Button button1;
         private Button button2;
         private Button button3;
+        private DataGridViewTextBoxColumn Id_Grupa;
+        private DataGridViewTextBoxColumn Nume_Grupa;
         private DataGridViewTextBoxColumn idStudent;
+        private DataGridViewTextBoxColumn Id_An;
+        private Button button4;
     }
 }
