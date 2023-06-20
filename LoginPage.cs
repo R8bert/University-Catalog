@@ -131,6 +131,6 @@ namespace Aplicatie
 }
 public static class Global
 {
-    public const string connectionString = "server=www.db4free.net;port=3306;database=catalog;user=proiectpoo;password=proiectpoo;";
+    public const string connectionString = "server=www.db4free.net;port=3306;database=catalog;user=;password=;";
     public static string utilizator = "";
 }
