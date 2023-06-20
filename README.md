@@ -39,6 +39,4 @@ The "Teachers" module in the UniCatalog application allows the management and as
 3. Study programs
 The study programs (specializations) are subordinate to the education cycles and represent the training paths that students can follow within the faculty.
 
-The "Add Programs" section provides you with a tool to add new study programs to the application. This functionality allows you to update and complete the database with new programs, ensuring that the information in the application is always up to date.
-
 (not the end of the description but i dont have time to get it done. sorry)
