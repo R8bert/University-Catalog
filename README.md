@@ -42,8 +42,6 @@ The Courses mode allows the user to add and delete courses, such as bachelor's a
 The "Teachers" module in the UniCatalog application allows the management and association of teachers with the subjects they teach, offering add, edit and delete functionalities. Users can enter information such as name, surname, employee brand, title and position for each teacher, thus ensuring an accurate and up-to-date record. This module facilitates the efficient administration of teacher data, contributing to the proper organization and management of information within the UniCatalog application.
 3. Study programs
 The study programs (specializations) are subordinate to the education cycles and represent the training paths that students can follow within the faculty.
-3.1 User manual
-The "Program Studies" module in the UniCatalog application offers the user the possibility to manage the educational programs in an efficient and organized way. This module allows entry and administration of essential study program details, including program number, program name and associated study cycle.
 
 The "Add Programs" section provides you with a tool to add new study programs to the application. This functionality allows you to update and complete the database with new programs, ensuring that the information in the application is always up to date.
 
