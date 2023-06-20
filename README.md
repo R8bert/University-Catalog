@@ -23,7 +23,7 @@ Department of Automation and Information Technology
 
 
 We are excited to present our college project to you, and the full source code is available on GitHub. This is an example of transparency and collaboration in software development, providing the opportunity for other students and developers to learn and contribute to this exciting project. Access to the source code on GitHub allows us to share knowledge and inspire each other within our community. We invite you to explore the source code and join our efforts to develop this project.
-The link to the source code: https://github.com/R8bert/Applicatie
+
 1. LOGIN & Main Page user manual
 
 The introduction to the instruction manual provides a brief overview of the functionality of the application's login page. It highlights the importance of proper authentication and describes the process by which users can enter their username and password to access the app's functionality. It also mentions that in case of a successful login, the user will be redirected to the main page or the corresponding functionality, while in case of a failed login, the user will receive an error message and will be required to review and re-enter the correct information.
