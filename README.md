@@ -33,10 +33,6 @@ The main page of the UniCatalog application provides quick buttons for accessing
 2. Education cycles
 A faculty can offer study programs for several levels of training or way of conducting the didactic process. For example, faculties usually offer bachelor's and master's degree programs. These are called learning cycles; the application must allow defining them.
 
-2.1 User manual
-
-The Courses mode allows the user to add and delete courses, such as bachelor's and master's degree programs offered by a college. User can enter course details and save them as well as delete existing courses from a list
- 
 2. Teaching staff
 
 The "Teachers" module in the UniCatalog application allows the management and association of teachers with the subjects they teach, offering add, edit and delete functionalities. Users can enter information such as name, surname, employee brand, title and position for each teacher, thus ensuring an accurate and up-to-date record. This module facilitates the efficient administration of teacher data, contributing to the proper organization and management of information within the UniCatalog application.
